@@ -1,12 +1,13 @@
 /**
- * Part of the axelitus\Asseter Package.
+ * Part of the axelitus\asseter package.
  *
- * @package     axelitus\Asseter
+ * @package     axelitus\asseter
  * @version     0.1
  * @author      Axel Pardemann (axelitusdev@gmail.com)
  * @license     MIT License
  * @copyright   2013 - Axel Pardemann
  * @link        http://axelitus.mx/projects/asseter
+ * @source      https://github.com/axelitusdev/asseter
  *
- * Package axelitus\Asseter main test js file
+ * Package axelitus\asseter main test js file
  */
