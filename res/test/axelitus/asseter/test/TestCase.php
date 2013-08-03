@@ -11,4 +11,10 @@
  */
 namespace axelitus\asseter\test;
 
-class TestCase extends \PHPUnit_Framework_TestCase { }
+class TestCase extends \PHPUnit_Framework_TestCase
+{
+    public function test_default()
+    {
+        $this->assertTrue(true, "This is a default test to see everything is working fine.");
+    }
+}
