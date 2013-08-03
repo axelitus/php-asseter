@@ -12,7 +12,7 @@
 
 namespace axelitus\asseter\test;
 
-class Test_Asseter extends TestCase
+class TestAsseter extends TestCase
 {
 
 }
