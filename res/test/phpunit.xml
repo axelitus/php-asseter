@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit colors="true" stopOnFailure="false" bootstrap="phpunit_bootstrap.php">
+    <php>
+        <server name="asset_path">res/assets</server>
+    </php>
+    <testsuites>
+        <testsuite name="asseter">
+            <directory suffix=".php">axelitus/asseter</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
