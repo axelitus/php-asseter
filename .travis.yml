@@ -6,4 +6,4 @@ php:
 before_script:
   - php composer.phar install
 
-script: phpunit --configuration res/test/phpunit.xml --bootstrap res/test/phpunitbootstrap.php
+script: phpunit --configuration res/test/phpunit.xml --bootstrap res/test/phpunit_bootstrap.php
