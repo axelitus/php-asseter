@@ -4,6 +4,6 @@ php:
     - 5.4
 
 before_script:
-  - php composer.phar install
+  - php composer.phar install --dev
 
 script: phpunit --configuration res/test/phpunit.xml --bootstrap res/test/phpunit_bootstrap.php
