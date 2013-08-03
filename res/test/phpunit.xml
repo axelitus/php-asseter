@@ -6,7 +6,7 @@
     </php>
     <testsuites>
         <testsuite name="asseter">
-            <directory suffix=".php">axelitus/asseter</directory>
+            <directory suffix=".php">axelitus/asseter/test</directory>
         </testsuite>
     </testsuites>
 </phpunit>
