@@ -2,7 +2,7 @@
 /**
  * Part of the axelitus\asseter package.
  *
- * @package     axelitus\sseter
+ * @package     axelitus\asseter\test
  * @version     0.1
  * @author      Axel Pardemann (axelitusdev@gmail.com)
  * @license     MIT License
@@ -10,6 +10,7 @@
  * @link        http://axelitus.mx/projects/asseter
  * @source      https://github.com/axelitusdev/asseter
  */
+
 namespace axelitus\asseter\test;
 
 class TestCase extends \PHPUnit_Framework_TestCase

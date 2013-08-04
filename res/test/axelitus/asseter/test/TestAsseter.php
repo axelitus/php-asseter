@@ -2,7 +2,7 @@
 /**
  * Part of the axelitus\asseter package.
  *
- * @package     axelitus\asseter
+ * @package     axelitus\asseter\test
  * @version     0.1
  * @author      Axel Pardemann (axelitusdev@gmail.com)
  * @license     MIT License
