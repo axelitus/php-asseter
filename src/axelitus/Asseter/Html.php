@@ -19,15 +19,24 @@ namespace axelitus\Asseter;
  */
 final class Html
 {
+    /**
+     * Creates a css tag.
+     *
+     * Can create an inline or a link tag.
+     *
+     * @param string       $src    The inline content or the link uri.
+     * @param string|array $attr   The tag's attributes.
+     * @param bool         $inline Whether to create an inline tag or not.
+     *
+     * @return string The compiled tag.
+     */
     public static function css($src, $attr = [], $inline = false)
     {
         $attr['type'] = (isset($attr['type'])) ? $attr['type'] : 'text/css';
         if ($inline) {
             $css = self::tag('style', $attr, PHP_EOL . $src . PHP_EOL);
         } else {
-            if (!isset($attr['rel']) or empty($attr['rel'])) {
-                $attr['rel'] = 'stylesheet';
-            }
+            $attr['rel'] = (isset($attr['rel'])) ? $attr['rel'] : 'stylesheet';
             $attr['href'] = $src;
 
             $css = self::tag('link', $attr);
@@ -39,12 +48,12 @@ final class Html
     /**
      * Creates an html tag with the given attributes and content.
      *
-     * @param string       $tag The tag to create.
-     * @param string|array $attr
-     * @param bool         $content
-     * @param bool         $xhtml_style
+     * @param string       $tag         The tag to create.
+     * @param string|array $attr        The tag's attributes.
+     * @param bool         $content     The tag's content.
+     * @param bool         $xhtml_style Whether to use xhtml style or not.
      *
-     * @return string
+     * @return string The compiled tag
      */
     public static function tag($tag, $attr = [], $content = false, $xhtml_style = false)
     {
@@ -66,7 +75,7 @@ final class Html
      * changed by the $xhtml_style parameter.
      *
      * @param array $arr         The attributes array.
-     * @param bool  $xhtml_style Whether to use the XHTML attributes style or not.
+     * @param bool  $xhtml_style Whether to use xhtml style or not.
      *
      * @return string The html attributes string.
      */
@@ -97,7 +106,15 @@ final class Html
     }
 
     /**
+     * Creates a script tag.
      *
+     * Can create an inline or a script src tag.
+     *
+     * @param string       $src    The inline content or the script src uri.
+     * @param string|array $attr   The tag's attributes.
+     * @param bool         $inline Whether to create an inline tag or not.
+     *
+     * @return string
      */
     public static function script($src, $attr = [], $inline = false)
     {
@@ -114,24 +131,33 @@ final class Html
     }
 
     /**
-     * Creates an html image tag
+     * Creates an img tag.
      *
-     * Sets the alt atribute to filename of it is not supplied.
+     * Can create an img tag with inline content or src uri. The mime-type should be given through $attr['mime-type'].
+     * Also the inline content charset can be given with $attr['charset'].
      *
-     * @param    string    he source
-     * @param    array     the attributes array
+     * @param string       $src         The inline content (data uri @see http://en.wikipedia.org/wiki/Data_URI_scheme) or the link uri.
+     * @param string|array $attr        The tag's attributes.
+     * @param bool         $inline      Whether to create an inline tag or not.
+     * @param bool         $xhtml_style Whether to use xhtml style or not.
      *
-     * @return    string    the image tag
+     * @return string
      */
-    public static function img($src, $attr = [], $inline = false)
+    public static function img($src, $attr = [], $inline = false, $xhtml_style = false)
     {
-        if (!preg_match('#^(\w+://)# i', $src)) {
-            $src = \Uri::base(false) . $src;
-        }
-        $attr['src'] = $src;
-        $attr['alt'] = (isset($attr['alt'])) ? $attr['alt'] : pathinfo($src, PATHINFO_FILENAME);
-        return html_tag('img', $attr);
+        if ($inline) {
+            $attr['mime-type'] = (isset($attr['mime-type'])) ? $attr['mime-type'] : 'image';
+            $attr['charset'] = (isset($attr['charset'])) ? ';' . $attr['charset'] : '';
+            $attr['src'] = 'data:' . $attr['mime'] . $attr['charset'] . ';base64,' . $src;
 
-        // data:image/png;base64,...
+            // unset additional attributes
+            unset($attr['mime-type']);
+            unset($attr['charset']);
+        } else {
+            $attr['src'] = $src;
+            $attr['alt'] = (isset($attr['alt'])) ? $attr['alt'] : pathinfo($src, PATHINFO_FILENAME);
+        }
+
+        return self::tag('img', $attr, $xhtml_style);
     }
 }
