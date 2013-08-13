@@ -1,9 +1,9 @@
 {
     "name": "axelitus/asseter",
-    "description": "Asset manager for PHP",
+    "description": "Asseter is a framework agnostic PHP package to easily manage web assets (css, js, img,...) with useful features.",
     "type": "library",
     "keywords": ["asset", "manager", "css", "img", "js", "render"],
-    "homepage": "http://axelitus.mx/projects/asseter",
+    "homepage": "http://axelitus.mx/projects/axelitus/asseter",
     "license": "MIT",
     "authors": [
         {
@@ -14,13 +14,15 @@
         }
     ],
     "support": {
-        "email": "axelitusdv@gmail.com",
-        "source": "https://github.com/axelitusdev/asseter",
-        "issues": "https://github.com/axelitusdev/asseter/issues",
-        "wiki": "https://github.com/axelitusdev/asseter/wiki"
+        "email": "axelitusdev@gmail.com",
+        "source": "https://github.com/axelitus/php-asseter",
+        "issues": "https://github.com/axelitus/php-asseter/issues",
+        "wiki": "https://github.com/axelitus/php-asseter/wiki"
     },
     "require": {
-        "php": ">=5.4.9"
+        "php": ">=5.4.9",
+        "axelitus/base": "dev-develop",
+        "axelitus/design-patterns":"dev-develop"
     },
     "require-dev": {
         "phpunit/phpunit": "3.8.*",
