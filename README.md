@@ -1,11 +1,11 @@
 # Asseter
 
-Asseter is a PHP package to manage web assets (css, js, img,...) in a webpage. The package aims to be a framework independent implementation of an asset manager with useful features.
+Asseter is a framework agnostic PHP package to easily manage web assets (css, js, img,...) with useful features.
 
 ## Package Information
 
 * **Package:** Asseter (norse for asset)
-* **Namespace:** axelitus\asseter
+* **Namespace:** axelitus\Asseter
 * **Author:** Axel Pardemann (axelitusdev@gmail.com)
 * **Roadmap:** [axelitus/asseter at Interstate]()
 * **Repository**: [axelitus/asseter at GitHub](https://github.com/axelitus/asseter "asseter at GitHub")
@@ -32,7 +32,9 @@ Being PSR-2 compliant means this package can be easily installed by using [Compo
 
 ## Contents
 
- - **axelitus\asseter\Asseter** - Description
+All classes are referenced to the base namespace if not otherwise stated.
+
+ - **Asseter** - Description
 
 ## How to install
 

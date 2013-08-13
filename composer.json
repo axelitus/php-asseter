@@ -31,8 +31,7 @@
     },
     "autoload": {
         "psr-0": {
-            "axelitus\\asseter": "src/",
-            "axelitus\\asseter\\test": "res/test/"
+            "axelitus\\Asseter": "src/"
         }
     },
     "config": {
